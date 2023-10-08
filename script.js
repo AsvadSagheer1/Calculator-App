@@ -32,3 +32,8 @@ function sqrt() {
     const result = Math.sqrt(eval(exp));
     calculateExp.textContent = result;
 }
+function clearAll() {
+    calculateExp.textContent = "_"
+    showExp.textContent = 0
+    exp = ""
+}
