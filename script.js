@@ -37,3 +37,7 @@ function clearAll() {
     showExp.textContent = 0
     exp = ""
 }
+function calculatePer() {
+    const result = eval(exp) / 100;
+    calculateExp.textContent = result;
+}
