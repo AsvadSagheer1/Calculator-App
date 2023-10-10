@@ -3,9 +3,28 @@ let calculateExp = document.querySelector(".calculate-exp")
 
 let exp = "";
 function makeExp(i) {
-    exp += i;
-    showExp.textContent = exp;
-    console.log(exp)
+    const lastChar = exp.slice(-1);
+    if (lastChar === '(' && i === '(') {
+        return;
+    }
+    if (lastChar === ')' && i === ')') {
+        return;
+    }
+    if (lastChar === ')' && i === '(') {
+        return;
+    }
+    if ((['+', '-', '*', '/'].includes(lastChar) || lastChar === '.') && (['+', '-', '*', '/', '.'].includes(i))) {
+        return;
+    }
+    if (i === 'π') {
+        exp += Math.PI;
+        showExp.textContent = exp;
+        console.log(exp);
+    } else {
+        exp += i;
+        showExp.textContent = exp;
+        console.log(exp);
+    }
 }
 function calculate() {
     if (showExp.textContent != 0) {
